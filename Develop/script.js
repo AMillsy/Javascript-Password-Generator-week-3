@@ -6,8 +6,7 @@ const numbers = [ `1`,`2`,`3`,`4`,`5`,`6`,`7`, `8`,`9`,`0`]
 
 const characters = [`q`,`w`,`e`,`r`,`t`,`y`,`u`,`i`,`o`,`p`,`a`,`s`,`d`,`f`,`g`,`h`,`j`,`k`,`l`,`z`,`x`,`c`,`v`,`b`,`n`,`m`]
 
-const specialCharacters = [
- ,` `,`!`,`"`,`#`,`$`,`%`,`&`,`'`,`(`,`)`,`*`,`+`,
+const specialCharacters = [` `,`!`,`"`,`#`,`$`,`%`,`&`,`'`,`(`,`)`,`*`,`+`,
   `,`,`-`,`.`,`/`,`:`,`;`,`<`,`=`,`>`,`?`,`@`,`[`,`]`,'\\',`^`,`_`,"`",`{`,`|`,`}`,`~`,
 ];
 
@@ -76,10 +75,22 @@ function inclusions(){
     const specialCharactersPrompt = prompt(`Do you want Special Characters included? Put y/n`);
     const wantsSpecialCharacter = allowedResponse(specialCharactersPrompt.toLowerCase(), `Special Characters`);
     console.log(wantsNumbers,wantsLowercase,wantsUppercase,wantsSpecialCharacter);
+
+    let charactersWanted = [];
+
+    if(wantsNumbers) charactersWanted.push(...numbers);
+    if(wantsLowercase) charactersWanted.push(...characters)
+    if(wantsUppercase) charactersWanted.push(...characters.map(character => character.toUpperCase()))
+    if(wantsSpecialCharacter)charactersWanted.push(...specialCharacters);
+
+    return charactersWanted;
 }
 
 const passSize = parseInt(getPassSize());
-inclusions();
+//Returns the character needed
+const totalCharacters = inclusions();
+
+console.log(totalCharacters);
 
 
 
@@ -97,7 +108,7 @@ function randomNumInRange(min, max){
 
 function generatePassword(){
   let rndPass = "";
-    for(let i = 0; i < passSize; i++) rndPass += characters[randomNumInRange(0,characters.length - 1)];
+    for(let i = 0; i < passSize; i++) rndPass += totalCharacters[randomNumInRange(0,totalCharacters.length - 1)];
 
     return rndPass;
 }
