@@ -37,14 +37,13 @@ What size do you want the password to be?: `);
 
 //Checks if the response is allowed, if not then retryResponse 
 function allowedResponse(response, question){
-
 //Function that will allow the response if the user puts in the correct thing.
 const responses = [`n`,`y`];
 function isResponseCorrect(response){
   if(responses.includes(response)) return true;
   return false;
 }
-
+//If they enter a incorrect response, enter this function
 function retryResponse(question){
   const response = prompt(`Incorrect Response to ${question} question, please put in y/n`);
   if(!isResponseCorrect(response)){
@@ -53,10 +52,13 @@ function retryResponse(question){
   else return response
 }
 
+//Checks if the response is a y or an n
   const isAllowed = response === `y` || response == `n`;
+  //if not ask them to put in a correct response
   if(!isAllowed){
       response = retryResponse(question);
   }
+  //if they have given me a correct response then return true or false based on the response
   if(response === `y`) return true;
   else return false;
 }
@@ -75,6 +77,7 @@ function inclusions(){
     const wantsSpecialCharacter = allowedResponse(specialCharactersPrompt.toLowerCase(), `Special Characters`);
     console.log(wantsNumbers,wantsLowercase,wantsUppercase,wantsSpecialCharacter);
 }
+
 const passSize = parseInt(getPassSize());
 inclusions();
 
