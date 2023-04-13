@@ -21,9 +21,12 @@ function randomNumInRange(min, max){
   return rand;
 }
 
+function generatePassword(){
+  let rndPass = "";
+    for(let i = 0; i < 16; i++) rndPass += characters[randomNumInRange(0,characters.length - 1)];
 
-console.log(generatePassword());
-
+    return rndPass;
+}
 
 function writePassword() {
   var password = generatePassword();
