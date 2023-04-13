@@ -8,16 +8,30 @@ const characters = [
   `,`,`-`,`.`,`/`,`:`,`;`,`<`,`=`,`>`,`?`,`@`,`[`,`]`,'\\',`^`,`_`,"`",`{`,`|`,`}`,`~`,
 ];
 
-let passSize = prompt(`What size do you want the password to be?`)
 
-if(isNaN(passSize)){
-passSize = prompt(`Password size has to be a number!
+
+
+
+function getPassSize(){
+let response = prompt(`What size do you want the password to be?`);
+//Checks if its a number, if not enter the statement
+if(isNaN(response) || Number(response) < 0){
+  let passCorrect = false;
+  //Start a loop until the give me a number
+  while(passCorrect === false){
+response = prompt(`Password size incorrect!
 What size do you want the password to be?`);
-}else if (Number(passSize) < 0){
-passSize = prompt(`Password can't be smaller then 0!
-What size do you want the password to be?`);
+
+      if(!(isNaN(response)) && Number(response) > 0) passCorrect = true;
+    }
+
+  }
+
+  return response;
+
 }
-passSize = parseInt(passSize);
+
+const passSize = getPassSize();
 
 
 
