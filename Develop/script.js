@@ -8,28 +8,31 @@ const characters = [
   `,`,`-`,`.`,`/`,`:`,`;`,`<`,`=`,`>`,`?`,`@`,`[`,`]`,'\\',`^`,`_`,"`",`{`,`|`,`}`,`~`,
 ];
 
+function isResponseCorrect(response ,min =7 , max = 129){
+  return !isNaN(response) && Number(response) > min && Number(response) < max;
+}
 function getPassSize(){
 let response = prompt(`What size do you want the password to be?
 Between 8 to 128 character `);
 //Checks if its a number, if not enter the statement
-const correctResponse = !isNaN(response) && Number(response) > 7 && Number(response) < 129;
 
  const retryPass = function(){
-    response = prompt(`isNAN: ${ !isNaN(response)} or less than 8: ${Number(response) > 7} or larger then 129: ${Number(response) < 129}  Password size incorrect!
-What size do you want the password to be?`);
-    if(correctResponse) return;
+    response = prompt(`isNAN: ${ !isNaN(response)} or more than 8: ${Number(response) > 7} or less than 129: ${Number(response) < 129}  Password size incorrect!
+What size do you want the password to be? correctR: `);
+
+    if(isResponseCorrect(response)) return;
     else retryPass();
  }
 
-if(!correctResponse){
-  retryPass();
-}
+ if(!isResponseCorrect(response)){
+    retryPass();
+ }
   return response;
 }
 
 const passSize = parseInt(getPassSize());
 
-console.log();
+console.log(passSize);
 
 
 // Write password to the #password input
