@@ -68,7 +68,12 @@ function inclusions(){
     const lowercasePrompt = prompt(`Do you want lowercase characters included? Put y/n`);
     const wantsLowercase = allowedResponse(lowercasePrompt.toLowerCase(),`Lowercase Characters`);
 
-    console.log(wantsNumbers,wantsLowercase);
+    const uppercasePrompt = prompt(`Do you want Uppercase Characters included? Put y/n`);
+    const wantsUppercase = allowedResponse(uppercasePrompt.toLowerCase(), `Uppercase Characters`);
+
+    const specialCharactersPrompt = prompt(`Do you want Special Characters included? Put y/n`);
+    const wantsSpecialCharacter = allowedResponse(specialCharactersPrompt.toLowerCase(), `Special Characters`);
+    console.log(wantsNumbers,wantsLowercase,wantsUppercase,wantsSpecialCharacter);
 }
 const passSize = parseInt(getPassSize());
 inclusions();
