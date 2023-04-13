@@ -2,22 +2,26 @@
 var generateBtn = document.querySelector("#generate");
 
 //All the characters that can be used in a password
-const characters = [
-  `1`,`2`,`3`,`4`,`5`,`6`,`7`, `8`,`9`,`0`,`q`,`w`,`e`,`r`,`t`,`y`,`u`,`i`,`o`,`p`,`a`,`s`,`d`,`f`,
-  `g`,`h`,`j`,`k`,`l`,`z`,`x`,`c`,`v`,`b`,`n`,`m`,` `,`!`,`"`,`#`,`$`,`%`,`&`,`'`,`(`,`)`,`*`,`+`,
+const numbers = [ `1`,`2`,`3`,`4`,`5`,`6`,`7`, `8`,`9`,`0`]
+
+const characters = [`q`,`w`,`e`,`r`,`t`,`y`,`u`,`i`,`o`,`p`,`a`,`s`,`d`,`f`,`g`,`h`,`j`,`k`,`l`,`z`,`x`,`c`,`v`,`b`,`n`,`m`]
+
+const specialCharacters = [
+ ,` `,`!`,`"`,`#`,`$`,`%`,`&`,`'`,`(`,`)`,`*`,`+`,
   `,`,`-`,`.`,`/`,`:`,`;`,`<`,`=`,`>`,`?`,`@`,`[`,`]`,'\\',`^`,`_`,"`",`{`,`|`,`}`,`~`,
 ];
 
-function isResponseCorrect(response ,min =7 , max = 129){
-  return !isNaN(response) && Number(response) > min && Number(response) < max;
-}
+//Gets the password size
 function getPassSize(){
+
 let response = prompt(`What size do you want the password to be?
 Between 8 to 128 character `);
 //Checks if its a number, if not enter the statement
-
+function isResponseCorrect(response ,min =7 , max = 129){
+  return !isNaN(response) && Number(response) > min && Number(response) < max;
+}
  const retryPass = function(){
-    response = prompt(`isNAN: ${ !isNaN(response)} or more than 8: ${Number(response) > 7} or less than 129: ${Number(response) < 129}  Password size incorrect!
+    response = prompt(`Password size incorrect!
 What size do you want the password to be? correctR: `);
 
     if(isResponseCorrect(response)) return;
