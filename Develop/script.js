@@ -8,6 +8,18 @@ const characters = [
   `,`,`-`,`.`,`/`,`:`,`;`,`<`,`=`,`>`,`?`,`@`,`[`,`]`,'\\',`^`,`_`,"`",`{`,`|`,`}`,`~`,
 ];
 
+let passSize = prompt(`What size do you want the password to be?`)
+
+if(isNaN(passSize)){
+passSize = prompt(`Password size has to be a number!
+What size do you want the password to be?`);
+}else if (Number(passSize) < 0){
+passSize = prompt(`Password can't be smaller then 0!
+What size do you want the password to be?`);
+}
+passSize = parseInt(passSize);
+
+
 
 // Write password to the #password input
 function randomNumInRange(min, max){
@@ -23,7 +35,7 @@ function randomNumInRange(min, max){
 
 function generatePassword(){
   let rndPass = "";
-    for(let i = 0; i < 16; i++) rndPass += characters[randomNumInRange(0,characters.length - 1)];
+    for(let i = 0; i < passSize; i++) rndPass += characters[randomNumInRange(0,characters.length - 1)];
 
     return rndPass;
 }
