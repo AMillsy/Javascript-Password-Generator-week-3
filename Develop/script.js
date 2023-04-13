@@ -17,26 +17,62 @@ function getPassSize(){
 let response = prompt(`What size do you want the password to be?
 Between 8 to 128 character `);
 //Checks if its a number, if not enter the statement
-function isResponseCorrect(response ,min =7 , max = 129){
+function isPassSizeCorrect(response ,min =7 , max = 129){
   return !isNaN(response) && Number(response) > min && Number(response) < max;
 }
  const retryPass = function(){
     response = prompt(`Password size incorrect!
-What size do you want the password to be? correctR: `);
+What size do you want the password to be?: `);
 
-    if(isResponseCorrect(response)) return;
+    if(isPassSizeCorrect(response)) return;
     else retryPass();
  }
 
- if(!isResponseCorrect(response)){
+ if(!isPassSizeCorrect(response)){
     retryPass();
  }
   return response;
 }
 
-const passSize = parseInt(getPassSize());
 
-console.log(passSize);
+//Checks if the response is allowed, if not then retryResponse 
+function allowedResponse(response, question){
+
+//Function that will allow the response if the user puts in the correct thing.
+const responses = [`n`,`y`];
+function isResponseCorrect(response){
+  if(responses.includes(response)) return true;
+  return false;
+}
+
+function retryResponse(question){
+  const response = prompt(`Incorrect Response to ${question} question, please put in y/n`);
+  if(!isResponseCorrect(response)){
+    retryResponse();
+  }
+  else return response
+}
+
+  const isAllowed = response === `y` || response == `n`;
+  if(!isAllowed){
+      response = retryResponse(question);
+  }
+  if(response === `y`) return true;
+  else return false;
+}
+
+function inclusions(){
+    const numberPrompt = prompt(`Do you want numbers in your password? Put y/n`);
+    const wantsNumbers = allowedResponse(numberPrompt.toLowerCase(), `Numbers`);
+    
+    const lowercasePrompt = prompt(`Do you want lowercase characters included? Put y/n`);
+    const wantsLowercase = allowedResponse(lowercasePrompt.toLowerCase(),`Lowercase Characters`);
+
+    console.log(wantsNumbers,wantsLowercase);
+}
+const passSize = parseInt(getPassSize());
+inclusions();
+
 
 
 // Write password to the #password input
