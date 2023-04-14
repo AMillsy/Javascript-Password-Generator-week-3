@@ -1,6 +1,6 @@
 # Javascript-Password-Generator-week-3
 
-**Making a password generator based on criteria's that the user selects**
+**Making a password generator based on criteria that the user selects**
 
 # GitPages
 
@@ -37,34 +37,34 @@ THEN the password is either displayed in an alert or written to the page
 
 # What I learnt
 
-I learnt how to use prompts in javascript to change the interaction on the website with the use of variables and if statements. With these statements I am able to direction my code to do what I want. 
+I learnt how to use prompts in javascript to change the interaction on the website with the use of variables and if statements. With these statements, I can direct my code to do what I want. 
 
-In addition, I am able to understand how to use functions so that I don't have to write the same sections over and over again. At the same as writing functions helped me understand the DRY principle of never having code that repeats itself, so running by this standard I tried to put all my functionality into different functions that could be reused.
+In addition, I can understand how to use functions so that I don't have to write the same sections over and over again. At the same as writing functions, it helped me understand the DRY principle of never having code that repeats itself, so running by this standard I tried to put all my functionality into different functions that could be reused.
 
 ## Usage
 
-This website can generate password upto 128 characters and also the user to pick which type of character they want in there password.
+This website can generate passwords up to 128 characters and also the user to pick which type of character they want in their password.
 
-First it will prompt the user with 5 options:
+First, it will prompt the user with 5 options:
 
 #### Password Size
 ![Asking the user for password size](./Assets/Readme-Images/PasswordSize.png)
 
-#### Numbers in password
-![Asking the user if they want numbers in password](./Assets/Readme-Images/Numbers.png)
+#### Numbers in the password
+![Asking the user if they want numbers in the password](./Assets/Readme-Images/Numbers.png)
 
-#### Lowercase character in password
-![Asking the user if they want lowercase Characters in password](./Assets/Readme-Images/Special%20Characters.png)
+#### Lowercase character in the password
+![Asking the user if they want lowercase Characters in the password](./Assets/Readme-Images/Special%20Characters.png)
 
-#### Uppercase Characters in password
-![Asking the user if they want Uppercase Characters in password](./Assets/Readme-Images/Uppercase%20Characters.png)
+#### Uppercase Characters in the password
+![Asking the user if they want Uppercase Characters in the password](./Assets/Readme-Images/Uppercase%20Characters.png)
 
-#### Special Characters in password
-![Asking the user if they want Special Characters in password](./Assets/Readme-Images/Special%20Characters.png)
+#### Special Characters in the password
+![Asking the user if they want Special Characters in the password](./Assets/Readme-Images/Special%20Characters.png)
 
 ### Password Generator
 
-Then finally after going through them steps, you can click Generate password and it will generate it with the criterias you have selected.
+Then finally after going through the steps, you can click Generate password and it will generate it with the criteria you have selected.
 
 ![Generating password](./Assets/Readme-Images/PasswordGenerator.png)
 
