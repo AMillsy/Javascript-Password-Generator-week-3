@@ -48,19 +48,19 @@ This website can generate password upto 128 characters and also the user to pick
 First it will prompt the user with 5 options:
 
 **Password Size**
-[Asking the user for password size](./Assets/Readme-Images/PasswordSize.png)
+![Asking the user for password size](./Assets/Readme-Images/PasswordSize.png)
 
 **Numbers in password**
-[Asking the user if they want numbers in password](./Assets/Readme-Images/Numbers.png)
+![Asking the user if they want numbers in password](./Assets/Readme-Images/Numbers.png)
 
 **Lowercase character in password**
-[Asking the user if they want lowercase Characters in password](./Assets/Readme-Images/Special%20Characters.png)
+![Asking the user if they want lowercase Characters in password](./Assets/Readme-Images/Special%20Characters.png)
 
 **Uppercase Characters in password**
-[Asking the user if they want Uppercase Characters in password](./Assets/Readme-Images/Uppercase%20Characters.png)
+![Asking the user if they want Uppercase Characters in password](./Assets/Readme-Images/Uppercase%20Characters.png)
 
 **Special Characters in password**
-[Asking the user if they want Special Characters in password](./Assets/Readme-Images/Special%20Characters.png)
+![Asking the user if they want Special Characters in password](./Assets/Readme-Images/Special%20Characters.png)
 
 ### Password Generator
 
