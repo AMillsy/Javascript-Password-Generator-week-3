@@ -42,7 +42,7 @@ const responses = [`n`,`y`];
 function retryResponse(question){
   const response = prompt(`Incorrect Response to ${question} question, please put in y/n`);
   if(!responses.includes(response)){
-    retryResponse();
+    return retryResponse(question);
   }
   else return response
 }
