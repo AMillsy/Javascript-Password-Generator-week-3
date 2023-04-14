@@ -36,12 +36,12 @@ What size do you want the password to be?: `);
 //Checks if the response is allowed, if not then retryResponse 
 function allowedResponse(response, question){
 //Function that will allow the response if the user puts in the correct thing.
-const responses = [`n`,`y`];
+const Wantedresponses = [`n`,`y`];
 
 //If they enter a incorrect response, enter this function
 function retryResponse(question){
   const response = prompt(`Incorrect Response to ${question} question, please put in y/n`);
-  if(!responses.includes(response)){
+  if(!Wantedresponses.includes(response)){
     return retryResponse(question);
   }
   else return response
