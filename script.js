@@ -18,6 +18,8 @@ Between 8 to 128 character `);
 function isPassSizeCorrect(response ,min =7 , max = 129){
   return !isNaN(response) && Number(response) > min && Number(response) < max;
 }
+
+//Function that loops until they return me a correct password
  const retryPass = function(){
     response = prompt(`Password size incorrect!
 What size do you want the password to be?: `);
@@ -26,9 +28,9 @@ What size do you want the password to be?: `);
     else retryPass();
  }
 
- if(!isPassSizeCorrect(response)){
-    retryPass();
- }
+ //If first password is wrong, retry password
+ if(!isPassSizeCorrect(response)) retryPass();
+ 
   return response;
 }
 
@@ -81,7 +83,7 @@ function inclusions(){
     }
 
     let charactersWanted = [];
-
+  
     if(wantsNumbers) charactersWanted.push(...numbers);
     if(wantsLowercase) charactersWanted.push(...characters)
     if(wantsUppercase) charactersWanted.push(...characters.map(character => character.toUpperCase()))
@@ -90,11 +92,10 @@ function inclusions(){
     return charactersWanted;
 }
 
+//Returns the password size
 const passSize = parseInt(getPassSize());
 //Returns the character needed
 const totalCharacters = inclusions();
-
-console.log(totalCharacters);
 
 // Write password to the #password input
 function randomNumInRange(min, max){
