@@ -7,8 +7,7 @@ const numbers = [ `1`,`2`,`3`,`4`,`5`,`6`,`7`, `8`,`9`,`0`]
 const characters = [`q`,`w`,`e`,`r`,`t`,`y`,`u`,`i`,`o`,`p`,`a`,`s`,`d`,`f`,`g`,`h`,`j`,`k`,`l`,`z`,`x`,`c`,`v`,`b`,`n`,`m`]
 
 const specialCharacters = [` `,`!`,`"`,`#`,`$`,`%`,`&`,`'`,`(`,`)`,`*`,`+`,
-  `,`,`-`,`.`,`/`,`:`,`;`,`<`,`=`,`>`,`?`,`@`,`[`,`]`,'\\',`^`,`_`,"`",`{`,`|`,`}`,`~`,
-];
+  `,`,`-`,`.`,`/`,`:`,`;`,`<`,`=`,`>`,`?`,`@`,`[`,`]`,'\\',`^`,`_`,"`",`{`,`|`,`}`,`~`,];
 
 //Gets the password size
 function getPassSize(){
@@ -38,14 +37,11 @@ What size do you want the password to be?: `);
 function allowedResponse(response, question){
 //Function that will allow the response if the user puts in the correct thing.
 const responses = [`n`,`y`];
-function isResponseCorrect(response){
-  if(responses.includes(response)) return true;
-  return false;
-}
+
 //If they enter a incorrect response, enter this function
 function retryResponse(question){
   const response = prompt(`Incorrect Response to ${question} question, please put in y/n`);
-  if(!isResponseCorrect(response)){
+  if(!responses.includes(response)){
     retryResponse();
   }
   else return response
@@ -62,6 +58,7 @@ function retryResponse(question){
   else return false;
 }
 
+//Function asks the user what they want to include
 function inclusions(){
     const numberPrompt = prompt(`Do you want numbers in your password? Put y/n`);
     const wantsNumbers = allowedResponse(numberPrompt.toLowerCase(), `Numbers`);
@@ -75,6 +72,13 @@ function inclusions(){
     const specialCharactersPrompt = prompt(`Do you want Special Characters included? Put y/n`);
     const wantsSpecialCharacter = allowedResponse(specialCharactersPrompt.toLowerCase(), `Special Characters`);
     console.log(wantsNumbers,wantsLowercase,wantsUppercase,wantsSpecialCharacter);
+
+    //If they don't select an option restart the response
+    if(!wantsLowercase && !wantsNumbers && !wantsUppercase && !wantsSpecialCharacter) 
+    {
+      alert(`You need to select atleast one.`)
+      return inclusions();
+    }
 
     let charactersWanted = [];
 
@@ -91,8 +95,6 @@ const passSize = parseInt(getPassSize());
 const totalCharacters = inclusions();
 
 console.log(totalCharacters);
-
-
 
 // Write password to the #password input
 function randomNumInRange(min, max){
