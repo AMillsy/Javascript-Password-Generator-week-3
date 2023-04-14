@@ -37,4 +37,12 @@ THEN the password is either displayed in an alert or written to the page
 
 I learnt how to use prompts in javascript to change the interaction on the website with the use of variables and if statements. With these statements I am able to direction my code to do what I want. 
 
-In addition, I am able to understand how to use functions to so that I don't have to write the same sections over and over again. 
+In addition, I am able to understand how to use functions so that I don't have to write the same sections over and over again. At the same as writing functions helped me understand the DRY principle of never having code that repeats itself, so running by this standard I tried to put all my functionality into different functions that could be reused.
+
+## Usage
+
+This website can generate password upto 128 characters and also the user to pick which type of character they want in there password.
+
+First it will prompt the user with 5 options:
+
+[]
