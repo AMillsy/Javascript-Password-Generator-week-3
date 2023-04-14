@@ -1,9 +1,11 @@
 # Javascript-Password-Generator-week-3
 
+**Making a password generator based on criteria's that the user selects**
+
 # GitPages
 
+[Password Generator Page](https://amillsy.github.io/Javascript-Password-Generator-week-3/)
 
-**Making a password generator based on criteria's that the user selects**
 
 ## User Story
 
@@ -45,4 +47,25 @@ This website can generate password upto 128 characters and also the user to pick
 
 First it will prompt the user with 5 options:
 
-[]
+**Password Size**
+[Asking the user for password size](./Assets/Readme-Images/PasswordSize.png)
+
+**Numbers in password**
+[Asking the user if they want numbers in password](./Assets/Readme-Images/Numbers.png)
+
+**Lowercase character in password**
+[Asking the user if they want lowercase Characters in password](./Assets/Readme-Images/Special%20Characters.png)
+
+**Uppercase Characters in password**
+[Asking the user if they want Uppercase Characters in password](./Assets/Readme-Images/Uppercase%20Characters.png)
+
+**Special Characters in password**
+[Asking the user if they want Special Characters in password](./Assets/Readme-Images/Special%20Characters.png)
+
+### Password Generator
+
+Then finally after going through them steps, you can click Generate password and it will generate it with the criterias you have selected.
+
+[Generating password](./Assets/Readme-Images/PasswordGenerator.png)
+
+
