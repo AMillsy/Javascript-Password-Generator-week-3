@@ -78,7 +78,7 @@ function inclusions(){
     //If they don't select an option restart the response
     if(!wantsLowercase && !wantsNumbers && !wantsUppercase && !wantsSpecialCharacter) 
     {
-      alert(`You need to select atleast one.`)
+      alert(`You need to select atleast one criteria.`)
       return inclusions();
     }
 
