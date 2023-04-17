@@ -92,10 +92,7 @@ function inclusions(){
     return charactersWanted;
 }
 
-//Returns the password size
-const passSize = parseInt(getPassSize());
-//Returns the character needed
-const totalCharacters = inclusions();
+
 
 // Write password to the #password input
 function randomNumInRange(min, max){
@@ -110,6 +107,12 @@ function randomNumInRange(min, max){
 }
 
 function generatePassword(){
+
+ //Returns the password size
+const passSize = parseInt(getPassSize());
+//Returns the character needed
+const totalCharacters = inclusions();
+
   let rndPass = "";
     for(let i = 0; i < passSize; i++) rndPass += totalCharacters[randomNumInRange(0,totalCharacters.length - 1)];
 
