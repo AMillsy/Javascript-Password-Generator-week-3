@@ -45,7 +45,13 @@ In addition, I can understand how to use functions so that I don't have to write
 
 This website can generate passwords up to 128 characters and also the user to pick which type of character they want in their password.
 
-First, it will prompt the user with 5 options:
+### Password Generator
+
+The first step is the user will click on the generate password button.
+
+![Generating password](./Assets/Readme-Images/PasswordGenStartUp.png)
+
+Then, it will prompt the user with 5 options:
 
 #### Password Size
 ![Asking the user for password size](./Assets/Readme-Images/PasswordSize.png)
@@ -62,10 +68,12 @@ First, it will prompt the user with 5 options:
 #### Special Characters in the password
 ![Asking the user if they want Special Characters in the password](./Assets/Readme-Images/Special%20Characters.png)
 
-### Password Generator
+### Password Generated
 
-Then finally after going through the steps, you can click Generate password and it will generate it with the criteria you have selected.
+After they complete these prompts, the user will be given a password with the criterias that they asked for.
 
-![Generating password](./Assets/Readme-Images/PasswordGenerator.png)
+![Password generated with the criteria](./Assets/Readme-Images/PasswordGenerator.png)
+
+
 
 
